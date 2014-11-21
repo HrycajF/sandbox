@@ -64,30 +64,13 @@ public class DefaultAssociativeArray<K, V> implements AssociativeArray<K, V> {
 		if (this.root.keyValue.getValue().equals(value)) {
 			return true;
 		}
-		
+
 		return false;
 	}
-		
-				
 
-		public V searchV(K key) {
-			V seachingGame = new V(key, null);
-			Element focusNode = root;
+	public V searchV(K key) {
 
-			// descend tree
-			while (focusNode.V.compareTo(seachingGame) != 0) {
-				if (focusNode.V.compareTo(seachingGame) > 0)
-					focusNode = focusNode.left;
-				else
-					focusNode = focusNode.right;
-				if (focusNode == null)
-					// game not found
-					return null;
-			}
-			// found game
-			return focusNode.game;
-		}
-		
+		return null;
 	}
 
 	@Override
