@@ -61,8 +61,33 @@ public class DefaultAssociativeArray<K, V> implements AssociativeArray<K, V> {
 
 	@Override
 	public boolean containsValue(V value) {
-		// TODO Auto-generated method stub
+		if (this.root.keyValue.getValue().equals(value)) {
+			return true;
+		}
+		
 		return false;
+	}
+		
+				
+
+		public V searchV(K key) {
+			V seachingGame = new V(key, null);
+			Element focusNode = root;
+
+			// descend tree
+			while (focusNode.V.compareTo(seachingGame) != 0) {
+				if (focusNode.V.compareTo(seachingGame) > 0)
+					focusNode = focusNode.left;
+				else
+					focusNode = focusNode.right;
+				if (focusNode == null)
+					// game not found
+					return null;
+			}
+			// found game
+			return focusNode.game;
+		}
+		
 	}
 
 	@Override
@@ -102,7 +127,7 @@ public class DefaultAssociativeArray<K, V> implements AssociativeArray<K, V> {
 
 	@Override
 	public int size() {
-		if (root == null) {
+		if (isEmpty()) {
 			return 0;
 		} else {
 			return 1 + this.getLeftArray().size() + this.getRightArray().size();
